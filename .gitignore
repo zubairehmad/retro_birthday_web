@@ -1,0 +1,7 @@
+/src/data/birthdayData.js
+/src/data/assets.js
+/public/assets/custom/
+
+node_modules
+dist
+.DS_Store

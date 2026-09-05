@@ -1,0 +1,278 @@
+/* Keep the record animation paused in place instead of resetting when playback stops. */
+.vinyl-record {
+  animation: vinyl-spin 4s linear infinite;
+  animation-play-state: paused;
+}
+
+.vinyl-record--playing {
+  animation-play-state: running;
+}
+
+@keyframes vinyl-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Desktop-only Music composition; the existing mobile layout stays untouched. */
+@media (min-width: 601px) and (max-width: 700px) {
+  .music-screen {
+    min-height: 100vh;
+    padding: 2rem clamp(1.25rem, 5vw, 3rem);
+    background: var(--cream);
+  }
+
+  .music-screen__header {
+    margin: 1rem auto 2rem;
+    text-align: center;
+  }
+
+  .music-screen__header p {
+    color: var(--red);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .music-screen h1 {
+    margin: 0;
+    font-family: 'Trebuchet MS', Georgia, sans-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .vinyl-player {
+    display: grid;
+    width: min(100%, 30rem);
+    margin: 0 auto 2rem;
+    justify-items: center;
+    gap: 1.25rem;
+  }
+
+  .vinyl-record {
+    display: grid;
+    width: min(48vw, 18rem);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 0.7rem solid #29231f;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, #49413a 0 2px, #27231f 3px 5px);
+    box-shadow: 8px 8px 0 var(--olive);
+  }
+
+  .vinyl-record--playing {
+    animation: vinyl-spin 4s linear infinite;
+  }
+
+  .vinyl-record__label {
+    display: grid;
+    width: 35%;
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--red);
+    color: var(--paper);
+    font-size: 0.65rem;
+    text-align: center;
+  }
+
+  .vinyl-player__metadata {
+    display: grid;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .vinyl-player__metadata span,
+  .track small {
+    color: var(--olive);
+  }
+
+  .music-controls {
+    display: flex;
+    width: min(100%, 32rem);
+    margin: 0 auto 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .music-controls button {
+    min-width: 3rem;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+  }
+
+  .music-controls input {
+    width: 100%;
+    accent-color: var(--red);
+  }
+
+  .tracklist {
+    display: grid;
+    width: min(100%, 32rem);
+    max-height: 15rem;
+    margin: 0 auto;
+    gap: 0.75rem;
+    overflow-y: auto;
+    padding: 0.25rem 0.25rem 1rem;
+  }
+
+  .track {
+    display: grid;
+    grid-template-columns: 2rem 1fr auto;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--brown);
+    background: var(--paper);
+    color: var(--brown);
+    text-align: left;
+  }
+
+  .track--active {
+    background: var(--pink);
+    box-shadow: 4px 4px 0 var(--red);
+  }
+}
+
+@media (min-width: 701px) {
+  .music-screen {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.85fr);
+    grid-template-rows: auto auto auto;
+    align-items: start;
+    column-gap: clamp(2rem, 7vw, 7rem);
+    padding: 2rem clamp(2rem, 6vw, 6rem);
+    background: var(--cream);
+  }
+
+  .music-screen > .back-button {
+    position: absolute;
+    top: 2rem;
+    left: clamp(2rem, 6vw, 6rem);
+  }
+
+  .music-screen__header {
+    grid-column: 1 / -1;
+    margin: 1rem auto 2.5rem;
+    text-align: center;
+  }
+
+  .music-screen__header p {
+    color: var(--red);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .music-screen h1 {
+    margin: 0.5rem 0 0;
+    font-family: 'Trebuchet MS', Georgia, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .vinyl-player {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+    width: min(100%, 34rem);
+    margin: 0 auto;
+  }
+
+  .vinyl-record {
+    display: grid;
+    width: min(32vw, 23rem);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 0.7rem solid #29231f;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, #49413a 0 2px, #27231f 3px 5px);
+    box-shadow: 8px 8px 0 var(--olive);
+  }
+
+  .vinyl-record--playing {
+    animation: vinyl-spin 4s linear infinite;
+  }
+
+  .vinyl-record__label {
+    display: grid;
+    width: 35%;
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--red);
+    color: var(--paper);
+    font-size: 0.65rem;
+    text-align: center;
+  }
+
+  .vinyl-player__metadata {
+    display: grid;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .vinyl-player__metadata span {
+    color: var(--olive);
+  }
+
+  .music-controls {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    width: min(100%, 34rem);
+    margin: 1rem auto 0;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .music-controls button {
+    min-width: 3rem;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+  }
+
+  .music-controls input {
+    width: 100%;
+    accent-color: var(--red);
+  }
+
+  .tracklist {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    display: grid;
+    align-content: start;
+    gap: 0.75rem;
+    width: min(100%, 32rem);
+    max-height: min(65vh, 35rem);
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 0.25rem 0.5rem 1rem 0.25rem;
+  }
+
+  .track {
+    display: grid;
+    grid-template-columns: 2rem 1fr auto;
+    width: min(100%, 30rem);
+    min-height: 44px;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--brown);
+    background: var(--paper);
+    color: var(--brown);
+    text-align: left;
+  }
+
+  .track small {
+    color: var(--olive);
+  }
+
+  .track--active {
+    background: var(--pink);
+    box-shadow: 4px 4px 0 var(--red);
+  }
+}
