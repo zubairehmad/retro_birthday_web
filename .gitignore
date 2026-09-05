@@ -2,6 +2,14 @@
 /src/data/assets.js
 /public/assets/custom/
 
+### AI related instructions
+docs/
+continue.md
+example-new-feature-request.md
+feature-requests.md
+project-specifications.md
+SOPs.md
+
 node_modules
 dist
 .DS_Store
