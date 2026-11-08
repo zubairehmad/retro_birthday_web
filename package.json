@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare:build": "test -f src/data/assets.js || cp src/data/assets.example.js src/data/assets.js; test -f src/data/birthdayData.js || cp src/data/birthdayData.example.js src/data/birthdayData.js",
+    "build": "npm run prepare:build && vite build"
   },
   "dependencies": {
     "@tsparticles/engine": "^4.4.0",
