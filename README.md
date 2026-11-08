@@ -6,33 +6,43 @@ This project is designed as a small interactive birthday surprise rather than a 
 
 > **Note:** This project was vibe coded with the assistance of AI. The source code and structure are provided so that you can customize and adapt the website for your own birthday surprise.
 
----
+## 📖 Overview
+
+Here's what you'll find in this repository:
+
+- **Getting Started:** Requirements, installation, and running the project locally.
+- **Customization:** Personalizing birthday information, photos, videos, and music.
+- **Assets:** Understanding the difference between default and custom assets.
+- **Production Build:** Creating an optimized production build.
+- **Deployment:** Deploying your customized website using Vercel or another static hosting provider.
+- **Project Structure:** A quick look at how the source code is organized.
+- **Credits:** Attribution and information about third-party assets.
 
 ## ✨ Features
 
-* 🎂 Interactive birthday experience
-* 🕹️ Cute retro/vintage aesthetic
-* 💌 Personalized birthday letter
-* 📸 Photo albums and memories
-* 🎵 Music player
-* 🎉 Birthday animations and effects
-* 🎆 Fireworks
-* 🌧️ Emoji effects
-* 🖼️ Photo lightbox
-* 💿 Retro vinyl-style music player
-* 💬 Rotating quotes
-* 📱 Responsive design
-* 🎨 Customizable birthday data and assets
+- 🎂 Interactive birthday experience
+- 🕹️ Cute retro/vintage aesthetic
+- 💌 Personalized birthday letter
+- 📸 Photo albums and memories
+- 🎵 Music player
+- 🎉 Birthday animations and effects
+- 🎆 Fireworks
+- 🌧️ Emoji effects
+- 🖼️ Photo lightbox
+- 💿 Retro vinyl-style music player
+- 💬 Rotating quotes
+- 📱 Responsive design
+- 🎨 Customizable birthday data and assets
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **React**
-* **Vite**
-* **JavaScript**
-* **CSS**
-* **HTML**
+- **React**
+- **Vite**
+- **JavaScript**
+- **CSS**
+- **HTML**
 
 ---
 
@@ -42,8 +52,8 @@ This project is designed as a small interactive birthday surprise rather than a 
 
 Make sure you have:
 
-* [Node.js](https://nodejs.org/) installed
-* npm installed
+- [Node.js](https://nodejs.org/) installed
+- npm installed
 
 ### Installation
 
@@ -61,6 +71,7 @@ npm install
 ```
 
 Copy the required files:
+
 ```bash
 cp src/data/birthdayData.example.js src/data/birthdayData.js
 cp src/data/assets.example.js src/data/assets.js
@@ -111,14 +122,14 @@ src/data/birthdayData.js
 
 This file contains the birthday-specific information, including:
 
-* Name
-* Birthday date
-* Quotes
-* Birthday letter
-* Happy/sad emojis
-* Photo albums
-* Memories
-* Songs
+- Name
+- Birthday date
+- Quotes
+- Birthday letter
+- Happy/sad emojis
+- Photo albums
+- Memories
+- Songs
 
 For example:
 
@@ -275,7 +286,7 @@ Please check the applicable license or usage requirements before replacing or re
 
 ## 🏗️ Building for Production
 
-Create a production build:
+Once you have finished customizing the website, create a production build:
 
 ```bash
 npm run build
@@ -292,6 +303,84 @@ To preview the production build locally:
 ```bash
 npm run preview
 ```
+
+---
+
+## 🌐 Deploying Your Customized Website
+
+You can deploy your customized birthday website to any static hosting provider, such as **Vercel**, Netlify, or Cloudflare Pages.
+
+The important thing to understand is that your personal configuration files and custom assets are ignored by Git. A normal Git-based deployment will therefore not receive them and will use the example configuration and default assets instead.
+
+The easiest approach is to build the website on your own computer and deploy the generated `dist/` directory.
+
+### Option 1: Deploy using Vercel CLI
+
+This method lets you deploy your locally customized version without committing your personal files to GitHub.
+
+**1. Make sure your customization is complete**
+
+Verify that these files exist and contain your personalized content:
+
+```text
+src/data/birthdayData.js
+src/data/assets.js
+public/assets/custom/
+```
+
+**2. Create a production build**
+
+Run:
+
+```bash
+npm run build
+```
+
+This generates the `dist/` directory containing your built website and its assets.
+
+**3. Deploy to Vercel**
+
+Run:
+
+```bash
+npx vercel dist
+```
+
+Follow the prompts to link or create your Vercel project.
+
+For subsequent production deployments, run:
+
+```bash
+npx vercel --prod dist
+```
+
+Your customized website will be deployed using the files in your local production build.
+
+### Option 2: Deploy using another static hosting provider
+
+You can also use Netlify, Cloudflare Pages, or any other provider that supports static websites.
+
+**1. Build the website locally**
+
+```bash
+npm run build
+```
+
+**2. Upload the generated `dist/` directory**
+
+Upload the contents of `dist/` to your hosting provider.
+
+You do not need to upload the source code, `node_modules/`, or other development files.
+
+### Important: Git-based deployments
+
+If you connect your GitHub repository directly to Vercel or another hosting provider, remember that Git does not include the ignored personal files.
+
+To deploy through Git integration, your deployment source must contain your customized configuration files and custom assets. You could maintain a separate private deployment repository containing those files, or use another workflow that makes them available during the build.
+
+**Do not force-add personal photos, videos, or birthday information to a public repository just to make deployment work.**
+
+Also remember that anything included in the frontend production build can be accessed by visitors to your deployed website. Do not put passwords, API secrets, or other private credentials in these files.
 
 ---
 
@@ -342,15 +431,15 @@ The website is intended to be **customized and extended**, not treated as a fixe
 
 Replace the example:
 
-* Name
-* Birthday date
-* Quotes
-* Letter
-* Photos
-* Videos
-* Songs
-* Captions
-* Memories
+- Name
+- Birthday date
+- Quotes
+- Letter
+- Photos
+- Videos
+- Songs
+- Captions
+- Memories
 
 with your own content and turn the template into a personal birthday surprise.
 
