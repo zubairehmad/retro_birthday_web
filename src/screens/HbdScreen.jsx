@@ -24,8 +24,8 @@ function HbdScreen({ onNext }) {
         <p className="hbd-card__kicker">A special celebration</p>
         <p className="hbd-card__label">★ birthday wishes ★</p>
         <h1>Happy Birthday!</h1>
-        <p className="hbd-card__message">Congratulations on your special day!</p>
-        <p className="hbd-card__submessage">Here&apos;s to another year of joy, laughter, and lovely memories.</p>
+        <p className="hbd-card__message">{birthdayData.hbdCardMessage}</p>
+        <p className="hbd-card__submessage">{birthdayData.hbdCardSubMessage}</p>
         <div className="hbd-card__cake-wrap">
           <span className="hbd-card__cake-sparkle" aria-hidden="true">✦</span>
           <button className="hbd-card__cake" type="button" onClick={handleCakeClick} aria-label="Celebrate with the birthday cake">

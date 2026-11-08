@@ -9,6 +9,8 @@ const birthdayData = {
     "Here's to all the memories we've made.",
   ],
   letter: 'Wishing you a birthday filled with gentle moments, big smiles, and all the happiness you deserve.\n\nHere is to another year of memories, laughter, and wonderful surprises.',
+  hbdCardMessage: "Congratulations on your special day!",
+  hbdCardSubMessage: "Here's to another year of joy, laughter, and lovely memories.",
   happyEmojis: [
     '🎉', '🥳', '❤️', '💕', '💖', '✨', '🎂', '🎈', '🌸', '😍',
     '🎊', '🎁', '🌟', '💫', '🪩', '🎶', '🍰', '🧁', '🌈', '🤩', '🥰', '💝',
